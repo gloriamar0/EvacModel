@@ -2,9 +2,25 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'evacModelUI/style.css' %}">
     <title>Home Page</title>
   </head>
   <body>
-    <p>Welcome!</p>
+    <h1>Welcome to the Evacuation<br>Modeling Simulation!</h1>
+    <p class="des">Please enter your desired inputs.</p>
+    <label for="city">Select a city:</label> 
+    <select name="cities" id="cities" required> 
+        <option value="" selected disabled></option>
+        <option value="houston">Houston</option> 
+        <option value="college station">College Station</option> 
+        <option value="hawaii">Hawaii</option> 
+    </select>
+  
+
   </body>
 </html>
