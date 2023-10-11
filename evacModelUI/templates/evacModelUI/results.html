@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-    {% load static %}
     <link rel="stylesheet" href="{% static 'evacModelUI/style.css' %}">
     <title>Results Page</title>
   </head>
@@ -16,7 +16,6 @@
     </div>
 
     <div>
-      {% load static %}
       <img src="{% static 'evacModelUI/test.png' %}" alt="Testing Image">
     </div>
   </body>
