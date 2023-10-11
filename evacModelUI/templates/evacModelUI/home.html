@@ -11,16 +11,38 @@
     <title>Home Page</title>
   </head>
   <body>
-    <h1>Welcome to the Evacuation<br>Modeling Simulation!</h1>
-    <p class="des">Please enter your desired inputs.</p>
-    <label for="city">Select a city:</label> 
-    <select name="cities" id="cities" required> 
+    <div>
+      <h1>Welcome to the Evacuation<br>Modeling Simulation!</h1>
+      <p class="des">Please enter your desired inputs.</p>
+    </div>
+
+    <div>
+      <label for="city">Select a city:</label> 
+      <select name="cities" id="cities" required> 
         <option value="" selected disabled></option>
         <option value="houston">Houston</option> 
         <option value="college station">College Station</option> 
         <option value="hawaii">Hawaii</option> 
-    </select>
-  
+      </select>
+    </div>
 
+    <div>
+      <label for="disaster">Select a disaster event:</label> 
+      <select name="disasters" id="disasters" required> 
+        <option value="" selected disabled></option>
+        <option value="fire">Fire</option> 
+        <option value="flooding">Flooding</option> 
+        <option value="hurricane">Hurricane</option> 
+      </select>
+    </div>
+  
+    <div>
+      <label for="population">Enter population number:</label>
+      <input type="number" id="population" name="population" min="1" required>
+    </div>
+
+    <div>
+      <button type="submit">Run Simulation</button>
+    </div>
   </body>
 </html>
