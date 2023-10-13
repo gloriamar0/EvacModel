@@ -7,19 +7,31 @@ Results Page
 
 {% block content %}
 <div>
-  <h1>Simulation Results</h1>
+  <h1 class="header">Simulation Results</h1>
   
   <!--Looping through every city-->
-  {% if city_list %}
-    <ul>
-      {% for city in city_list %}
-        <li>{{city.name}}</li>
-      {% endfor%}
-    </ul>
-  {% else %}
-    <p>No data.</p>
-  {% endif %}
+  <div>
+    <p>Outputing data from database (test):</p>
+    {% if city_list %}
+      <ul>
+        {% for city in city_list %}
+          <li>{{city.name}}</li>
+        {% endfor%}
+      </ul>
+    {% else %}
+      <p>No data.</p>
+    {% endif %}
 
-  <img src="{% static 'evacModelUI\test.png' %}" alt="Testing Image">
+    <div class="center">
+      <img src="{% static 'evacModelUI\test.png' %}" alt="Testing Image" class="img-fluid center">
+    </div>
+
+    <br>
+
+    <!--Place holder for now!!-->
+    <div>
+      <button type="button" onclick="history.back()">Go to Home Page</button>
+    </div>
+  </div>
 </div>
 {% endblock content %}

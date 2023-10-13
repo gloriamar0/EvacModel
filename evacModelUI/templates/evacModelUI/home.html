@@ -6,11 +6,14 @@ Home Page
 
 {% block content %}
 <div>
+  <div class="container header">
     <h1>Welcome to the Evacuation<br>Modeling Simulation!</h1>
-    <h4>Please enter your desired inputs.</h4>
+    <div class="container">
+      <h4 style="padding-top: 10px;"><em>Please enter your desired inputs.</em></h4>
+    </div>
   </div>
 
-  <div>
+  <div class="input">
     <label for="city">Select a city:</label> 
     <select name="cities" id="cities" required> 
       <option value="" selected disabled></option>
@@ -18,24 +21,33 @@ Home Page
       <option value="college station">College Station</option> 
       <option value="hawaii">Hawaii</option> 
     </select>
-  </div>
+  
+    <br><br>
 
-  <div>
     <label for="disaster">Select a disaster event:</label> 
     <select name="disasters" id="disasters" required> 
       <option value="" selected disabled></option>
       <option value="fire">Fire</option> 
       <option value="flooding">Flooding</option> 
       <option value="hurricane">Hurricane</option> 
+      <option value="explostion">Explosion</option>
     </select>
-  </div>
+  
+    <br><br>
 
-  <div>
     <label for="population">Enter population number:</label>
     <input type="number" id="population" name="population" min="1" required>
-  </div>
+  
+    <br><br>
 
-  <div>
-    <input type="submit" value="Run Simulation">
+    <a href="/results">
+      <button type="button">Run Simulation</button>
+    </a>
+  
+    <!-- *want to use this for the actual button*
+      <div>
+        <input type="submit" value="Run Simulation">
+      </div>
+    -->
   </div>
-{% endblock content %}
+  {% endblock content %}
