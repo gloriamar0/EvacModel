@@ -13,5 +13,4 @@ def results(request):
     cities_collection = db['cities']
     #cities_collection.insertOne({'name' : 'Test'}) ## doesn't work because it is a GET request
     cities = cities_collection.find()
-    #return HttpResponse(cities)
-    return render(request, "evacModelUI/results.html")
+    return render(request, "evacModelUI/results.html", {'city_list' : cities})

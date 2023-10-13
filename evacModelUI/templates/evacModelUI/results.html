@@ -8,9 +8,18 @@ Results Page
 {% block content %}
 <div>
   <h1>Simulation Results</h1>
-</div>
+  
+  <!--Looping through every city-->
+  {% if city_list %}
+    <ul>
+      {% for city in city_list %}
+        <li>{{city.name}}</li>
+      {% endfor%}
+    </ul>
+  {% else %}
+    <p>No data.</p>
+  {% endif %}
 
-<div>
   <img src="{% static 'evacModelUI\test.png' %}" alt="Testing Image">
 </div>
 {% endblock content %}
