@@ -1,22 +1,16 @@
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% load static %}
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <link rel="stylesheet" href="{% static 'evacModelUI/style.css' %}">
-    <title>Results Page</title>
-  </head>
-  <body>
-    <div>
-      <h1>Simulation Results</h1>
-    </div>
+{% extends 'base.html' %}
+{% load static %}
 
-    <div>
-      <img src="{% static 'evacModelUI/test.png' %}" alt="Testing Image">
-    </div>
-  </body>
-</html>
+{% block title %}
+Results Page
+{% endblock title %}
+
+{% block content %}
+<div>
+  <h1>Simulation Results</h1>
+</div>
+
+<div>
+  <img src="{% static 'evacModelUI\test.png' %}" alt="Testing Image">
+</div>
+{% endblock content %}

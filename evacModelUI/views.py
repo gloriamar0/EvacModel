@@ -5,7 +5,7 @@ from utils import get_db_handle
 
 
 def home(request):
-    return render(request, "evacModelUI/home.html")
+    return render(request, "evacModelUI/home.html", {})
 
 def results(request):
     url = 'mongodb://localhost:27017/'
