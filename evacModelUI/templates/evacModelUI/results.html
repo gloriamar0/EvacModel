@@ -1,15 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-Results Page
-{% endblock title %}
+{% block title %}Results Page{% endblock title %}
 
 {% block content %}
 <div>
   <h1 class="header">Simulation Results</h1>
   
-  <!--Looping through every city-->
+  <!-- Displaying every city name
   <div>
     <p>Outputing data from database (test):</p>
     {% if city_list %}
@@ -20,6 +18,20 @@ Results Page
       </ul>
     {% else %}
       <p>No data.</p>
+    {% endif %} -->
+
+    <!--Displaying input-->
+    <p>Outputing input from database (test):</p>
+    {% if inputs_list %}
+      <ul>
+        {% for input in inputs_list %}
+          <li>{{input.city}}</li>
+          <li>{{input.event}}</li>
+          <li>{{input.population}}</li>
+        {% endfor%}
+      </ul>
+    {% else %}
+      <p>No input.</p>
     {% endif %}
 
     <div class="center">
