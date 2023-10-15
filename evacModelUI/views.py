@@ -22,11 +22,12 @@ def results(request):
             {'$set': {'city': inputCity,
                       'event': inputEvent,
                       'population': inputPopulation} })
-        # input_collection.insert_one(
-        #     {'id': 0,
-        #      'city': inputCity,
-        #      'event': inputEvent,
-        #      'population': inputPopulation} )
+        
+        """ input_collection.insert_one(
+            {'id': 0,
+             'city': inputCity,
+             'event': inputEvent,
+             'population': inputPopulation} ) """
 
     # Displaying results
     inputs = input_collection.find()
