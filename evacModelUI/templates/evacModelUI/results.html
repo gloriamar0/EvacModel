@@ -5,9 +5,9 @@
 
 {% block content %}
 <div>
-  <h1 class="header">Simulation Results</h1>
-    <!--Displaying input-->
-    <p>Outputing input from database (test):</p>
+  <h1 class="header" style="padding-bottom: 20px;">Simulation Results</h1>
+    <!-- Displaying input (for testing purposes)
+    <p>Outputing input from database:</p>
     {% if inputs_list %}
       <ul>
         {% for input in inputs_list %}
@@ -18,11 +18,41 @@
       </ul>
     {% else %}
       <p>No input.</p>
-    {% endif %}
+    {% endif %} -->
 
-    <div class="center">
-      <img src="{% static 'evacModelUI\test5.png' %}" alt="Testing Image" class="img-fluid center">
-    </div> <br>
+    <!--Displaying output-->
+    <div class="container">
+      <div class="container-fluid">
+        {% if text_list %}
+          {{ text_list.title}}
+          <table>
+            <thead>
+              <tr>
+                {% for header in text_list.headers %}
+                  <th> {{ header }} </th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for content_line in text_list.content %}
+                <tr>
+                  {% for content in content_line %}
+                  <td> {{ content }} </td>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p>No text file.</p>
+        {% endif %}
+      </div>
+      
+      <div class="center">
+        <img src="{% static 'evacModelUI/scorestats.png' %}" alt="Score Stats" class="img-fluid center">
+        <img src="{% static 'evacModelUI/stopwatch.png' %}" alt="Stopwatch" class="img-fluid center">
+      </div>
+    </div>
 
     <div>
       <a href="{% url 'home' %}">
