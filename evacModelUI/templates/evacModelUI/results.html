@@ -22,10 +22,10 @@
 
     <!--Displaying output-->
     <div class="container">
-      <div class="container-fluid">
+      <div>
         {% if text_list %}
-          {{ text_list.title}}
-          <table>
+        {{ text_list.title}}
+        <table>
             <thead>
               <tr>
                 {% for header in text_list.headers %}
@@ -47,7 +47,7 @@
           <p>No text file.</p>
         {% endif %}
       </div>
-      
+
       <div class="center">
         <img src="{% static 'evacModelUI/scorestats.png' %}" alt="Score Stats" class="img-fluid center">
         <img src="{% static 'evacModelUI/stopwatch.png' %}" alt="Stopwatch" class="img-fluid center">

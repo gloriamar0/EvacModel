@@ -20,12 +20,13 @@ img {
 
 table {
     text-align: center;
+    margin: 20px auto;
     width : 500px;
-    margin: 20px;
     border: 1px solid black;
     border-spacing: 0px;
 }
 td, th {
     border: 1px solid black;
     height: 35px;
+    width: 150px;
 }

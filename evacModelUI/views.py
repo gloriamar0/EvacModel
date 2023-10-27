@@ -84,7 +84,7 @@ def results(request):
             for i in range(1, len(headers)):
                 content[-1][i] = content[-1][i][0:6]
 
-        txt_file_content.update({'title': 'Score Statistics',
+        txt_file_content.update({'title': 'Score Statistics Table:',
                                  'headers': headers,
                                  'content': content})
 
