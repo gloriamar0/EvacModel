@@ -1,0 +1,2 @@
+docker build --tag evacmodel-container .
+docker run --publish 8000:8000 evacmodel-container
