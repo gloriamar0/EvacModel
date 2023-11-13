@@ -6,7 +6,7 @@
 {% block content %}
 <div>
   <h1 class="header" style="padding-bottom: 20px;">Simulation Results</h1>
-    <!-- Displaying input (for testing purposes)
+    <!-- Displaying input (for testing purposes) -->
     <p>Outputing input from database:</p>
     {% if inputs_list %}
       <ul>
@@ -18,10 +18,10 @@
       </ul>
     {% else %}
       <p>No input.</p>
-    {% endif %} -->
+    {% endif %}
 
-    <!--Displaying output-->
-    <div class="container">
+    <!--Displaying output -->
+    <!-- <div class="container">
       <div>
         {% if text_list %}
         {{ text_list.title}}
@@ -52,7 +52,7 @@
         <img src="{% static 'evacModelUI/scorestats.png' %}" alt="Score Stats" class="img-fluid center">
         <img src="{% static 'evacModelUI/stopwatch.png' %}" alt="Stopwatch" class="img-fluid center">
       </div>
-    </div>
+    </div> -->
 
     <div>
       <a href="{% url 'home' %}">

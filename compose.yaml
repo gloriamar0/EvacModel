@@ -16,19 +16,19 @@ services:
       context: .
     ports:
       - 8000:8000
-  mongo:
-    image: mongodb/mongodb-community-server:6.0-ubi8
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: mongoadmin
-      MONGO_INITDB_ROOT_PASSWORD: test123
-    ports:
-      - 27018:27017
-    volumes:
-      - mongodata:/data/db
+  # mongo:
+  #   image: mongodb/mongodb-community-server:6.0-ubi8
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: mongoadmin
+  #     MONGO_INITDB_ROOT_PASSWORD: test123
+  #   ports:
+  #     - 27018:27017
+  #   volumes:
+  #     - mongodata:/data/db
 
-volumes:
-  mongodata:
-    driver: local
+# volumes:
+#   mongodata:
+#     driver: local
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
