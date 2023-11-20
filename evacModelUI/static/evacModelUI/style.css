@@ -13,13 +13,19 @@
 .all {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 2% 0 2% 0;
+}
+
+.homeBody {
     color: white;
-    font-size: large;
+}
+
+body { /* Only applies to Results page */
+    background-image: url('back1.jpg');
+    background-size: contain;
 }
 
 .header {
     text-align: center;
-    font-size: large;
 }
 
 .center {
@@ -29,7 +35,16 @@
     width: 75%;
 }
 
-.button {
+.col {
+    text-align: center;
+    color: white;
+    background-color: rgb(73, 75, 77);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.button1 {
     color: white;
     background-color: transparent;
     border-color: white;
@@ -38,9 +53,24 @@
     transition: all 0.35s ease;
 }
 
-.button:hover {
+.button1:hover {
     color: black;
     background-color: white;
+    transition: all 0.35s ease;
+}
+
+.button2 {
+    color: black;
+    background-color: white;
+    border-color: rgb(73, 75, 77);
+    border-radius: 8px;
+    padding: 6px;
+    transition: all 0.35s ease;
+}
+
+.button2:hover {
+    color: white;
+    background-color: rgb(73, 75, 77);
     transition: all 0.35s ease;
 }
 
@@ -59,8 +89,9 @@ table {
     text-align: center;
     margin: 20px auto;
     width : 500px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-spacing: 0px;
+    background-color: white;
 }
 td, th {
     border: 1px solid black;
@@ -76,6 +107,15 @@ td, th {
     }
     100% {
         transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
         opacity: 1;
     }
 }
@@ -107,4 +147,16 @@ td, th {
 
 .fadeInUp-body4 {
     animation: 1.6s wait, 1.5s 1.6s fadeInUp;
+}
+
+.fadeIn-body1 {
+    animation: 0.2s wait, 1.5s 0.2s fadeIn;
+}
+
+.fadeIn-body2 {
+    animation: 0.4s wait, 1.5s 0.4s fadeIn;
+}
+
+.fadeIn-body3 {
+    animation: 0.6s wait, 1.5s 0.6s fadeIn;
 }

@@ -4,7 +4,7 @@
 {% block title %}Home Page{% endblock title %}
 
 {% block content %}
-<div>
+<div class="homeBody">
   <video autoplay loop muted id="backgroundVideo">
     <source src="{% static 'evacModelUI/SimulationVid2.mp4' %}" type="video/mp4">
   </video>
@@ -31,10 +31,10 @@
         <label for="event" class="fadeInUp-body2">Select a disaster event:</label> 
         <select name="event" id="event" class="fadeInUp-body2" required> 
           <option value="" selected disabled></option>
-          <option value="fire">Fire</option> 
-          <option value="flooding">Flooding</option> 
-          <option value="hurricane">Hurricane</option> 
-          <option value="explosion">Explosion</option>
+          <option value="Fire">Fire</option> 
+          <option value="Flooding">Flooding</option> 
+          <option value="Hurricane">Hurricane</option> 
+          <option value="Explosion">Explosion</option>
         </select> <br><br>
 
         <label for="population" class="fadeInUp-body3">Enter population number:</label>
@@ -42,7 +42,7 @@
       </fieldset> <br>
 
       <div>
-        <input type="submit" value="Run Simulation" class="fadeInUp-body4 button">
+        <input type="submit" value="Run Simulation" class="fadeInUp-body4 button1">
       </div>
     </form>
   </div>

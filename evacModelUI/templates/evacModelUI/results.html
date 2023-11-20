@@ -4,18 +4,23 @@
 {% block title %}Results Page{% endblock title %}
 
 {% block content %}
-<div>
-  <h1 class="header" style="padding-bottom: 20px;">Simulation Results</h1>
-    <!-- Displaying input (for testing purposes) -->
-    <p>Outputing input from database:</p>
+<div class="resultsBody">
+  <h1 class="header fadeInUp-header1" style="padding-bottom: 20px;"><b>Simulation Results for</b></h1>
+    <!-- Displaying input -->
     {% if inputs_list %}
-      <ul>
+      <div class="row">
         {% for input in inputs_list %}
-          <li>{{input.city}}</li>
-          <li>{{input.event}}</li>
-          <li>{{input.population}}</li>
+        <div class="col fadeIn-body1">
+          <h4><b>City:</b> {{input.city}}</h4>
+        </div>
+        <div class="col fadeIn-body2">
+          <h4><b>Disaster:</b> {{input.event}}</h4>
+        </div>
+        <div class="col fadeIn-body3">
+          <h4><b>Population:</b> {{input.population}}</h4>
+        </div>
         {% endfor%}
-      </ul>
+      </div>
     {% else %}
       <p>No input.</p>
     {% endif %}
@@ -24,9 +29,12 @@
     <div class="container">
       <div>
         {% if text_list %}
-        {{ text_list.title}}
-        <table>
+        <!--{{ text_list.title}}-->
+        <table class="fadeInUp-body1">
             <thead>
+              <tr>
+                <th colspan="6"><b>{{ text_list.title}}</b></th>
+              </tr>
               <tr>
                 {% for header in text_list.headers %}
                   <th> {{ header }} </th>
@@ -49,14 +57,14 @@
       </div>
 
       <div class="center">
-        <img src="{% static 'evacModelUI/scorestats.png' %}" alt="Score Stats" class="img-fluid center">
-        <img src="{% static 'evacModelUI/stopwatch.png' %}" alt="Stopwatch" class="img-fluid center">
+        <img src="{% static 'evacModelUI/scorestats.png' %}" alt="Score Stats" class="img-fluid center fadeInUp-body2">
+        <img src="{% static 'evacModelUI/stopwatch.png' %}" alt="Stopwatch" class="img-fluid center fadeInUp-body3">
       </div>
     </div>
 
     <div>
       <a href="{% url 'home' %}">
-        <button type="button">Go to Home Page</button>
+        <button type="button" class="button2 fadeInUp-body4">Go to Home Page</button>
       </a>
     </div>
   </div>
