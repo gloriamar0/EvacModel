@@ -1,10 +1,25 @@
+#backgroundVideo {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
 .all {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 2% 0 2% 0;
+    color: white;
+    font-size: large;
 }
 
 .header {
     text-align: center;
+    font-size: large;
 }
 
 .center {
@@ -14,10 +29,32 @@
     width: 75%;
 }
 
+.button {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+    border-radius: 8px;
+    padding: 6px;
+    transition: all 0.35s ease;
+}
+
+.button:hover {
+    color: black;
+    background-color: white;
+    transition: all 0.35s ease;
+}
+
+select, input {
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+}
+
 img {
     padding-bottom: 4%;
 }
 
+/* Table Styling */
 table {
     text-align: center;
     margin: 20px auto;
@@ -29,4 +66,45 @@ td, th {
     border: 1px solid black;
     height: 35px;
     width: 150px;
+}
+
+/* Text Animations */
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes wait {
+    0% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.fadeInUp-header1 {
+    animation: 1.5s fadeInUp;
+}
+
+.fadeInUp-header2 {
+    animation: 0.5s wait, 1.5s 0.5s fadeInUp;
+}
+
+.fadeInUp-body1 {
+    animation: 1s wait, 1.5s 1s fadeInUp;
+}
+
+.fadeInUp-body2 {
+    animation: 1.2s wait, 1.5s 1.2s fadeInUp;
+}
+
+.fadeInUp-body3 {
+    animation: 1.4s wait, 1.5s 1.4s fadeInUp;
+}
+
+.fadeInUp-body4 {
+    animation: 1.6s wait, 1.5s 1.6s fadeInUp;
 }

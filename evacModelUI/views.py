@@ -32,7 +32,7 @@ def results(request):
     inputs = input_collection.find()
 
     # Storing output files into database
-    # fs = gridfs.GridFS(db)  #used for large files
+    fs = gridfs.GridFS(db)  #used for large files
     # output_files = ['modestats_stackedbar.png',
     #                 'modestats.png',
     #                 'modestats.txt',
@@ -58,34 +58,34 @@ def results(request):
     #     fs.put(data, filename = file)
     
     # # Deciding which files to display in UI
-    # display_images = ['scorestats.png',
-    #                   'stopwatch.png']
+    display_images = ['scorestats.png',
+                      'stopwatch.png']
                      
-    # display_text = ['scorestats.txt']
+    display_text = ['scorestats.txt']
 
     # # Retrieving PNGs and saving in static folder
-    # for img_file_name in display_images:
-    #     data = db.fs.files.find_one({'filename': img_file_name})
-    #     file_content = fs.get(data['_id']).read()
-    #     output_file = open("evacModelUI/static/evacModelUI/" + img_file_name, 'wb')
-    #     output_file.write(file_content)
-    #     output_file.close()
+    for img_file_name in display_images:
+        data = db.fs.files.find_one({'filename': img_file_name})
+        file_content = fs.get(data['_id']).read()
+        output_file = open("evacModelUI/static/evacModelUI/" + img_file_name, 'wb')
+        output_file.write(file_content)
+        output_file.close()
 
     # # # Retrieving TXT files
     txt_file_content = {}
-    # for txt_file_name in display_text:
-    #     data = db.fs.files.find_one({'filename': txt_file_name})
-    #     file_content = fs.get(data['_id']).readlines()
+    for txt_file_name in display_text:
+        data = db.fs.files.find_one({'filename': txt_file_name})
+        file_content = fs.get(data['_id']).readlines()
 
-    #     headers = file_content.pop(0).decode().split("\t")
-    #     content = []
-    #     for line in file_content:
-    #         content.append(line.decode().split("\t"))
-    #         for i in range(1, len(headers)):
-    #             content[-1][i] = content[-1][i][0:6]
+        headers = file_content.pop(0).decode().split("\t")
+        content = []
+        for line in file_content:
+            content.append(line.decode().split("\t"))
+            for i in range(1, len(headers)):
+                content[-1][i] = content[-1][i][0:6]
 
-    #     txt_file_content.update({'title': 'Score Statistics Table:',
-    #                              'headers': headers,
-    #                              'content': content})
+        txt_file_content.update({'title': 'Score Statistics Table:',
+                                 'headers': headers,
+                                 'content': content})
 
     return render(request, "evacModelUI/results.html", {'inputs_list': inputs, 'text_list': txt_file_content})

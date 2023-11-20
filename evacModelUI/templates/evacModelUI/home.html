@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Home Page{% endblock title %}
 
 {% block content %}
 <div>
+  <video autoplay loop muted id="backgroundVideo">
+    <source src="{% static 'evacModelUI/SimulationVid2.mp4' %}" type="video/mp4">
+  </video>
+
   <div class="container header">
-    <h1>Welcome to the Evacuation<br>Modeling Simulation!</h1>
+    <h1 class="fadeInUp-header1">Welcome to the Evacuation<br>Modeling Simulation!</h1>
     <div class="container">
-      <h4 style="padding: 10px 0 15px 0;"><em>Please enter your desired inputs.</em></h4>
+      <h4 class="fadeInUp-header2" style="padding: 10px 0 15px 0;"><em>Please enter your desired inputs.</em></h4>
     </div>
   </div>
 
@@ -15,16 +20,16 @@
     <form action="{% url 'results' %}" method="post">
     {% csrf_token %}
       <fieldset>
-        <label for="city">Select a city:</label> 
-        <select name="cities" id="cities" required> 
+        <label for="city" class="fadeInUp-body1">Select a city:</label> 
+        <select name="cities" id="cities" class="fadeInUp-body1" required> 
           <option value="" selected disabled></option>
           <option value="Houston">Houston</option> 
           <option value="College Station">College Station</option> 
           <option value="Hawaii">Hawaii</option> 
         </select> <br><br>
 
-        <label for="event">Select a disaster event:</label> 
-        <select name="event" id="event" required> 
+        <label for="event" class="fadeInUp-body2">Select a disaster event:</label> 
+        <select name="event" id="event" class="fadeInUp-body2" required> 
           <option value="" selected disabled></option>
           <option value="fire">Fire</option> 
           <option value="flooding">Flooding</option> 
@@ -32,12 +37,12 @@
           <option value="explosion">Explosion</option>
         </select> <br><br>
 
-        <label for="population">Enter population number:</label>
-        <input type="number" id="population" name="population" min="1" required>
+        <label for="population" class="fadeInUp-body3">Enter population number:</label>
+        <input type="number" id="population" name="population" class="fadeInUp-body3" min="1" max="10000" required>
       </fieldset> <br>
 
       <div>
-        <input type="submit" value="Run Simulation">
+        <input type="submit" value="Run Simulation" class="fadeInUp-body4 button">
       </div>
     </form>
   </div>
