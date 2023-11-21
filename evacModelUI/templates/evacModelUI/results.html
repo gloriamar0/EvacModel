@@ -4,7 +4,9 @@
 {% block title %}Results Page{% endblock title %}
 
 {% block content %}
-<div class="resultsBody">
+<body class="resultsBody">
+<div class="container all">
+<div>
   <h1 class="header fadeInUp-header1" style="padding-bottom: 20px;"><b>Simulation Results for</b></h1>
     <!-- Displaying input -->
     {% if inputs_list %}
@@ -69,4 +71,6 @@
     </div>
   </div>
 </div>
+</div>
+</body>
 {% endblock content %}
