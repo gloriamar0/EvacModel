@@ -1,0 +1,162 @@
+#backgroundVideo {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.all {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 2% 0 2% 0;
+}
+
+.homeBody {
+    color: white;
+}
+
+.resultsBody { /* Only applies to Results page */
+    background-image: url('back1.jpg');
+    background-size: contain;
+}
+
+.header {
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.col {
+    text-align: center;
+    color: white;
+    background-color: rgb(73, 75, 77);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.button1 {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+    border-radius: 8px;
+    padding: 6px;
+    transition: all 0.35s ease;
+}
+
+.button1:hover {
+    color: black;
+    background-color: white;
+    transition: all 0.35s ease;
+}
+
+.button2 {
+    color: black;
+    background-color: white;
+    border-color: rgb(73, 75, 77);
+    border-radius: 8px;
+    padding: 6px;
+    transition: all 0.35s ease;
+}
+
+.button2:hover {
+    color: white;
+    background-color: rgb(73, 75, 77);
+    transition: all 0.35s ease;
+}
+
+select, input {
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+}
+
+img {
+    padding-bottom: 4%;
+}
+
+/* Table Styling */
+table {
+    text-align: center;
+    margin: 20px auto;
+    width : 500px;
+    border: 2px solid black;
+    border-spacing: 0px;
+    background-color: white;
+}
+td, th {
+    border: 1px solid black;
+    height: 35px;
+    width: 150px;
+}
+
+/* Text Animations */
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes wait {
+    0% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.fadeInUp-header1 {
+    animation: 1.5s fadeInUp;
+}
+
+.fadeInUp-header2 {
+    animation: 0.5s wait, 1.5s 0.5s fadeInUp;
+}
+
+.fadeInUp-body1 {
+    animation: 1s wait, 1.5s 1s fadeInUp;
+}
+
+.fadeInUp-body2 {
+    animation: 1.2s wait, 1.5s 1.2s fadeInUp;
+}
+
+.fadeInUp-body3 {
+    animation: 1.4s wait, 1.5s 1.4s fadeInUp;
+}
+
+.fadeInUp-body4 {
+    animation: 1.6s wait, 1.5s 1.6s fadeInUp;
+}
+
+.fadeIn-body1 {
+    animation: 0.2s wait, 1.5s 0.2s fadeIn;
+}
+
+.fadeIn-body2 {
+    animation: 0.4s wait, 1.5s 0.4s fadeIn;
+}
+
+.fadeIn-body3 {
+    animation: 0.6s wait, 1.5s 0.6s fadeIn;
+}
