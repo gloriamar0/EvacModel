@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  django:
+    # networks:
+    #   - hosting_network
+    volumes:
+      - ./_app:/usr/src/app
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - static_vol:/app/evacModelUI/static
+    ports:
+      - "8000:8000"
+    environment:
+      - PROD_HOST_NAME
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - static_vol:/app/evacModelUI/static
+    ports:
+      - "80:80"
+    depends_on:
+      - django
+
+networks:
+  hosting_network:
+
+volumes:
+  static_vol:

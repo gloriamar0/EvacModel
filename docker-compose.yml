@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - SECRET_KEY
+    command: gunicorn EvacModel.wsgi -c gunicorn.cfg.py
+    volumes:
+      - ./_app:/usr/src/app
+      - ./nginx:/etc/nginx/conf.d
+    environment:
+      - PYTHONUNBUFFERED=0
+      - SECRET_KEY

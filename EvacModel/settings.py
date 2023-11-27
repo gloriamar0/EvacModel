@@ -21,13 +21,27 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%cr!7a4-a@fl2pzxl0w@-^4pb4l*dq419-3vny*^op4f%^p^dm'
+## os.environ.get == os.getenv
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
+DEBUG = os.getenv('DEBUG', False) == 'true'
+
+## What worked before
+# if DEBUG:
+#     SECURE_SSL_REDIRECT = False
+# else:
+#     SECURE_SSL_REDIRECT = True
 
 ALLOWED_HOSTS = ['localhost', '*']
+## Once prod host is determined
+# CSRF_TRUSTED_ORIGINS = ['http://localhost']
 
+# PROD_HOST_NAME = os.getenv('PROD_HOST_NAME', None)
+# if PROD_HOST_NAME:
+#     ALLOWED_HOSTS.append(PROD_HOST_NAME)
+#     CSRF_TRUSTED_ORIGINS.append(f'https://{PROD_HOST_NAME}')
 
 # Application definition
 
@@ -128,3 +142,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Deployment settings
+
+#SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True

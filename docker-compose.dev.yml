@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  django:
+    command: gunicorn EvacModel.wsgi -c gunicorn.cfg.py --reload
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=true

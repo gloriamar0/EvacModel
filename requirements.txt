@@ -37,6 +37,7 @@ Pygments==2.16.1
 pykerberos==1.2.4
 pymongo==4.5.0
 pypng==0.20220715.0
+python-decouple==3.8
 python-snappy==0.6.1
 six==1.16.0
 snappy==3.1.1

@@ -30,5 +30,9 @@
 **/obj
 **/secrets.dev.yaml
 **/values.dev.yaml
+*.yml
+*.md
+*.sh
+*.log
 LICENSE
 README.md

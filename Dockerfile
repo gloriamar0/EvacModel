@@ -7,6 +7,8 @@
 ARG PYTHON_VERSION=3.8.10
 FROM python:${PYTHON_VERSION}-slim as base
 
+ARG SECRET_KEY
+
 # Prevents Python from writing pyc files.
 ENV PYTHONDONTWRITEBYTECODE=1
 
@@ -48,6 +50,9 @@ USER appuser
 
 # Copy the source code into the container.
 COPY . .
+COPY ./_app /app/
+
+RUN python3 manage.py collectstatic --no-input
 
 # Expose the port that the application listens on.
 EXPOSE 8000
