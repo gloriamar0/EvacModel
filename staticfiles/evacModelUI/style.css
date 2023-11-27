@@ -28,6 +28,10 @@
     text-align: center;
 }
 
+.populationDisplay {
+    color: rgb(151, 151, 151);
+}
+
 .center {
     display: block;
     margin-left: auto;

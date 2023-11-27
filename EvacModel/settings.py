@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'evacModelUI',
     'bootstrap5',
+    'jquery',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
