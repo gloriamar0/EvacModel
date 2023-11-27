@@ -3,3 +3,4 @@
 .dockerignore
 compose.yaml
 commands.txt
+*.sh
