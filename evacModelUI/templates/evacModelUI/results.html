@@ -59,8 +59,11 @@
       </div>
 
       <div class="center">
-        <img src="{% static 'evacModelUI/scorestats.png' %}" alt="Score Stats" class="img-fluid center fadeInUp-body2">
-        <img src="{% static 'evacModelUI/stopwatch.png' %}" alt="Stopwatch" class="img-fluid center fadeInUp-body3">
+        {% for image in images %}
+          <img src="data:image/jpeg;base64, {{ image }}" class="img-fluid center fadeInUp-body2">
+        {% endfor %}
+        <!-- <img src="{% static 'evacModelUI/images/scorestats.png' %}" alt="Score Stats" class="img-fluid center fadeInUp-body2">
+        <img src="{% static 'evacModelUI/images/stopwatch.png' %}" alt="Stopwatch" class="img-fluid center fadeInUp-body3"> -->
       </div>
     </div>
 
