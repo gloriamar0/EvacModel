@@ -38,7 +38,13 @@ def results(request):
     #                 'traveldistancestatstrips.png']
     
     # Deciding which files to display in UI
-    images_list = ['scorestats.png','stopwatch.png']
+    images_list = ['scorestats.png',
+                   'stopwatch.png',
+                   'modestats_stackedbar.png',
+                   'modestats.png',
+                   'pkm_modestats.png',
+                   'traveldistancestatslegs.png',
+                   'traveldistancestatstrips.png']
     text_files_list = ['scorestats.txt']
 
     # Retrieving data for display

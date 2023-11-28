@@ -8,70 +8,75 @@
 <div class="container all">
 <div>
   <h1 class="header fadeInUp-header1" style="padding-bottom: 20px;"><b>Simulation Results for</b></h1>
-    <!-- Displaying input -->
-    {% if inputs_list %}
-      <div class="row">
-        {% for input in inputs_list %}
-        <div class="col fadeIn-body1">
-          <h4><b>City:</b> {{input.city}}</h4>
-        </div>
-        <div class="col fadeIn-body2">
-          <h4><b>Disaster:</b> {{input.event}}</h4>
-        </div>
-        <div class="col fadeIn-body3">
-          <h4><b>Population:</b> {{input.population}}</h4>
-        </div>
-        {% endfor%}
-      </div>
-    {% else %}
-      <p>No input.</p>
-    {% endif %}
 
-    <!--Displaying output -->
-    <div class="container">
-      <div>
-        {% if text_list %}
-        <!--{{ text_list.title}}-->
-        <table class="fadeInUp-body1">
-            <thead>
+  <!-- Displaying input -->
+  {% if inputs_list %}
+    <div class="row">
+      {% for input in inputs_list %}
+      <div class="col fadeIn-body1">
+        <h4><b>City:</b> {{input.city}}</h4>
+      </div>
+      <div class="col fadeIn-body2">
+        <h4><b>Disaster:</b> {{input.event}}</h4>
+      </div>
+      <div class="col fadeIn-body3">
+        <h4><b>Population:</b> {{input.population}}</h4>
+      </div>
+      {% endfor%}
+    </div>
+  {% else %}
+    <p>No input.</p>
+  {% endif %}
+
+
+  <div class="container">
+    <!-- Displaying map
+    <div class="center">
+      <img src="{% static image_static %}" class="img-fluid center fadeInUp-body1" alt="Transportion Network">
+    </div> -->
+
+    <!-- Displaying output -->
+    <div>
+      {% if text_list %}
+      <table class="fadeInUp-body2">
+          <thead>
+            <tr>
+              <th colspan="6"><b>{{ text_list.title}}</b></th>
+            </tr>
+            <tr>
+              {% for header in text_list.headers %}
+                <th> {{ header }} </th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for content_line in text_list.content %}
               <tr>
-                <th colspan="6"><b>{{ text_list.title}}</b></th>
-              </tr>
-              <tr>
-                {% for header in text_list.headers %}
-                  <th> {{ header }} </th>
+                {% for content in content_line %}
+                <td> {{ content }} </td>
                 {% endfor %}
               </tr>
-            </thead>
-            <tbody>
-              {% for content_line in text_list.content %}
-                <tr>
-                  {% for content in content_line %}
-                  <td> {{ content }} </td>
-                  {% endfor %}
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        {% else %}
-          <p>No text file.</p>
-        {% endif %}
-      </div>
-
-      <div class="center">
-        {% for image in images %}
-          <img src="data:image/jpeg;base64, {{ image }}" class="img-fluid center fadeInUp-body2">
-        {% endfor %}
-      </div>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>No text file.</p>
+      {% endif %}
     </div>
 
-    <div>
-      <a href="{% url 'home' %}">
-        <button type="button" class="button2 fadeInUp-body4">Go to Home Page</button>
-      </a>
+    <div class="center">
+      {% for image in images %}
+        <img src="data:image/jpeg;base64, {{ image }}" class="img-fluid center fadeInUp-body3">
+      {% endfor %}
     </div>
   </div>
-</div>
+
+  <div>
+    <a href="{% url 'home' %}">
+      <button type="button" class="button2 fadeInUp-body4">Go to Home Page</button>
+    </a>
+  </div>
+  </div>
 </div>
 </body>
 {% endblock content %}

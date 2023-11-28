@@ -7,10 +7,7 @@ def insertInputs(input_collection, inputForm):
     inputEvent = inputForm['event']
     inputPopulation = inputForm['population']
 
-    input_collection.insert_one({'id': 0,
-                     'city': inputCity,
-                     'event': inputEvent,
-                     'population': inputPopulation} )
+    input_collection.insert_one({'id': 0, 'city': inputCity, 'event': inputEvent, 'population': inputPopulation} )
 
 # Updates inputs from exisiting database entry
 def updateInputs(input_collection, inputForm):
@@ -20,9 +17,9 @@ def updateInputs(input_collection, inputForm):
     inputPopulation = inputForm['population']
 
     input_collection.update_one({'id': 0},
-                    {'$set': {'city': inputCity,
-                              'event': inputEvent,
-                              'population': inputPopulation} })
+                                {'$set': {'city': inputCity,
+                                          'event': inputEvent,
+                                          'population': inputPopulation} })
 
 def storeLargeFileDatabase(fs, file_name, file_location):
     file_data = open(file_location, "rb")
